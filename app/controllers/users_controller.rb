@@ -12,15 +12,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      render json: { user: @user }
-    else
-      render json: { errors: current_user.errors }, status: :unprocessable_entity
-    end
-  end
-
   private
 
   def user_params
